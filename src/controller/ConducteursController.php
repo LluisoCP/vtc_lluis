@@ -26,7 +26,12 @@ class ConducteursController
         $conducteurs = Conducteur::findAll();
         view('conducteurs.conducteurs', compact('conducteurs'));
     }
+    public function show($id)
+    {
+        $conducteur = Conducteur::findOne($id);
 
+        view('conducteurs.conducteur', compact('conducteur'));
+    }
     public function edit($id)
     {
         $conducteur = Conducteur::findOne($id);
@@ -44,8 +49,17 @@ class ConducteursController
 
         $conducteur->update();
 
-        // redirectTo('conducteurs');
+        redirectTo('conducteurs');
 
+    }
+
+
+    public function delete($id)
+    {
+        $conducteur = Conducteur::findOne($id);
+        $conducteur->delete();
+
+        // redirectTo('conducteurs');
     }
 
     

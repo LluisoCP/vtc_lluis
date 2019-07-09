@@ -28,6 +28,12 @@ class VehiculesController {
         view('vehicules.vehicules', compact('vehicules'));
     }
 
+    public function show($id)
+    {
+        $vehicule = Vehicule::findOne($id);
+
+        view('vehicules.vehicule', compact('vehicule'));
+    }
 
     public function edit($id)
     {
@@ -48,8 +54,16 @@ class VehiculesController {
 
         $vehicule->update();
 
-        // redirectTo('vehicules');
+        redirectTo('vehicules');
     
+    }
+
+    public function delete($id)
+    {
+        $vehicule = Vehicule::findOne($id);
+        $vehicule->delete();
+
+        redirectTo('vehicules');
     }
 
 

@@ -31,6 +31,13 @@ class AssociationsController
         // redirectTo('associations');
 
     }
+    public function show($id)
+    {
+        $association = Association::findOne($id);
+
+        view('associations.association', compact('association'));
+    }
+
     public function edit($id)
     {
         $association = Association::findOne($id);
@@ -52,5 +59,13 @@ class AssociationsController
 
         // redirectTo('associations');
 
+    }
+
+    public function delete($id)
+    {
+        $association = Association::findOne($id);
+        $association->delete();
+
+        // redirectTo('associations');
     }
 }

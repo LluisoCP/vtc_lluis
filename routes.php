@@ -47,18 +47,17 @@ $router->get('conducteurs', 'ConducteursController@index');
 $router->get('association/{id}/edit', 'AssociationsController@edit');
 $router->post('association/{id}/edit', 'AssociationsController@update');
 
-// Afficher un
-$router->get('association/{id}', 'AssociationsController@show');
-
 //Supprimer
 $router->get('association/{id}/delete', 'AssociationsController@delete');
 
+// Afficher un
+$router->get('association/{id}', 'AssociationsController@show');
+
 //Ajouter
-// $router->get('associations/add', 'AssociationsController@add');
-// $router->post('associations/add', 'AssociationsController@save');
+$router->post('associations', 'AssociationsController@save');
+
 //Tous afficher
 $router->get('associations', 'AssociationsController@index');
-$router->post('associations', 'AssociationsController@save');
 
 
 

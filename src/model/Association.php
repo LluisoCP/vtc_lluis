@@ -111,5 +111,30 @@ class Association extends Db
         $vehicule = Vehicule::findOne($this->getVehiculeId());
         return $vehicule;
     }
+    public function update()
+    {
+        if ($this->id > 0) {
+            $data = [
+                'id'                => $this->getId(),
+                'id_conducteur'     => $this->getConducteurId(),
+                'id_vehicule'       => $this->getVehiculeId()
+            ];
+            Db::dbUpdate(self::TABLE_NAME, $data);
+
+            return $this;
+        }
+        return;
+    }
+
+    public function delete()
+    {
+        $data = [
+            'id'    => $this->getId()
+        ];
+        Db::dbDelete(self::TABLE_NAME, $data);
+
+        return;
+    }
+
 
 }
