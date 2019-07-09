@@ -24,6 +24,44 @@ function js_url($js) {
     return BASE_URL . '/public/assets/js/' . $js;
 }
 
+function url_vehicule($id)
+{
+    return BASE_URL . '/vehicule/' . $id;
+}
+function url_vehicule_edit($id) {
+    return BASE_URL . '/vehicule/' . $id . '/edit';
+}
+function url_vehicule_delete($id)
+{
+    return BASE_URL . '/vehicule/' . $id . '/delete';
+}
+
+function url_conducteur($id)
+{
+    return BASE_URL . '/conducteur/' . $id;
+}
+function url_conducteur_edit($id)
+{
+    return BASE_URL . '/conducteur/' . $id . '/edit';
+}
+function url_conducteur_delete($id)
+{
+    return BASE_URL . '/conducteur/' . $id . '/delete';
+}
+
+function url_association($id)
+{
+    return BASE_URL . '/association/' . $id;
+}
+function url_association_edit($id)
+{
+    return BASE_URL . '/association/' . $id . '/edit';
+}
+function url_association_delete($id)
+{
+    return BASE_URL . '/association/' . $id . '/delete';
+}
+
 function public_url($url) {}
 
 
